@@ -37,6 +37,25 @@ Currently, this package focuses specifically on Android, where such a solution w
 
 Here’s how to get started in Dart:
 
+add this in dependencies block of pubspec.yaml-
+
+```bash
+dependencies:
+  flutter:
+    sdk: flutter
+
+  #this is where the phonemization magic happens
+  piper_phonemizer_plugin:
+    git:
+      url: https://github.com/dev-6768/piper_phonemizer_plugin.git
+      ref: main # or a specific branch, tag, or commit
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.8
+
+
+how to use it ?
 ```dart
 import 'package:piper_phonemizer/piper_phonemizer.dart';
 
