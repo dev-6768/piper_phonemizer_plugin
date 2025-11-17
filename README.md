@@ -8,15 +8,15 @@
 
 - ⚡ **Fast and Lightweight**: Designed for performance and minimal resource usage.
 - 🔤 **Text to Phoneme Conversion**: Converts plain text into language-specific phonemes.
-- 📦 **FFI-based**: Built in C for speed but easily usable from Dart (Flutter), Python, and more.
+- 📦 **FFI-based**: Built in C for speed but easily usable from Dart (Flutter).
 - 🌍 **Multi-language Support**: Works with different voices and phoneme schemes.
-- 📱 **Mobile Ready**: Optimized for embedded and mobile use cases (like Flutter apps).
+- 📱 **Mobile Ready**: Optimized for mobile use cases (like Flutter android apps).
 
 ---
 
 ## 💡 Inspiration
 
-While Piper is a fantastic lightweight TTS engine, there was no simple and reliable way to convert raw text into phonemes that could be directly consumed by Piper for tasks like voice cloning, custom TTS, or linguistic analysis—especially in mobile or embedded environments.
+While Piper is a fantastic lightweight TTS engine, there was no simple and reliable way to convert raw text into phonemes that could be directly consumed by Piper for tasks like voice cloning, custom TTS, or linguistic analysis—especially in mobile environments.
 
 Existing solutions were often:
 - Tightly coupled to heavyweight systems,
