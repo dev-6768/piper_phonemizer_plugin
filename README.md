@@ -30,7 +30,7 @@ To bridge this gap, **Piper Phonemizer** was created — a clean, minimal, and e
 
 If you’ve ever wished for a drop-in phonemizer that just works with Piper, especially in a Flutter app or lightweight deployment, this package is for you.
 
-Currently, this package focuses specifically on Android, where such a solution was most critical for mobile developers. However, support for other platforms—such as Windows, Linux, macOS, and iOS—is planned for future versions.
+Currently, this package focuses specifically on Android (we have only arm64-v8a and x86_64 support for now. Support for other ABIs will be planned in later versions), where such a solution was most critical for mobile developers. However, support for other platforms—such as Windows, Linux, macOS, and iOS—is planned for future versions.
 
 
 ## 🧪 Minimal Reproducible Example
