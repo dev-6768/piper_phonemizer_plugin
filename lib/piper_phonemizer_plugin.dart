@@ -48,52 +48,73 @@ class PiperPhonemizerPlugin {
 
   /// Initialize espeakbridge with optional data directory
   Future<int> initialize() async {
-    final dataDir = await unzipEspeakData();
-    print(dataDir);
-    final dirPtr = dataDir.toNativeUtf8();
-    final result = _initialize(dirPtr);
-    malloc.free(dirPtr);
-    return result;
+    try {
+      final dataDir = await unzipEspeakData();
+      print(dataDir);
+      final dirPtr = dataDir.toNativeUtf8();
+      final result = _initialize(dirPtr);
+      malloc.free(dirPtr);
+      return result;
+    }
+
+    catch(err) {
+      throw Exception("PiperPhonemizerPlugin : Some error occured while initializing phonemizer : $err");
+    }
+    
   }
 
   /// Set voice by name
   int setVoice(String voice) {
-    final ptr = voice.toNativeUtf8();
-    final result = _setVoice(ptr);
-    malloc.free(ptr);
-    return result;
+    try {
+      final ptr = voice.toNativeUtf8();
+      final result = _setVoice(ptr);
+      malloc.free(ptr);
+      return result;
+    }
+
+    catch(err) {
+      throw Exception("PiperPhonemizerPlugin : Some error occured while setting voice : $err");
+    } 
   }
 
   /// Get phonemes string from text
   String getPhonemesString(String text) {
-    final textPtr = text.toNativeUtf8();
-    final countPtr = malloc<Int32>();
-    countPtr.value = 0;
+    try {
+      final textPtr = text.toNativeUtf8();
+      final countPtr = malloc<Int32>();
+      countPtr.value = 0;
 
-    final results = _getPhonemes(textPtr, countPtr);
+      final results = _getPhonemes(textPtr, countPtr);
 
-    final count = countPtr.value;
-    malloc.free(countPtr);
-    malloc.free(textPtr);
+      final count = countPtr.value;
+      malloc.free(countPtr);
+      malloc.free(textPtr);
 
-    if (results.address == 0 || count == 0) return "";
+      if (results.address == 0 || count == 0) return "";
 
-    final buffer = StringBuffer();
-    for (var i = 0; i < count; i++) {
-      final phonemePtr = results[i].phonemes;
-      final termPtr = results[i].terminator;
+      final buffer = StringBuffer();
+      for (var i = 0; i < count; i++) {
+        final phonemePtr = results[i].phonemes;
+        final termPtr = results[i].terminator;
 
-      if (phonemePtr.address != 0) {
-        buffer.write(phonemePtr.toDartString());
+        if (phonemePtr.address != 0) {
+          buffer.write(phonemePtr.toDartString());
+        }
+        if (termPtr.address != 0) {
+          buffer.write(termPtr.toDartString());
+        }
       }
-      if (termPtr.address != 0) {
-        buffer.write(termPtr.toDartString());
-      }
+
+      _freePhonemes(results, count);
+
+      return buffer.toString();
     }
 
-    _freePhonemes(results, count);
 
-    return buffer.toString();
+    catch(err) {
+      throw Exception("PiperPhonemizerPlugin : Some error occured while generating phoneme string : $err");
+    }
+    
   }
 
   Future<String?> getPlatformVersion() {
