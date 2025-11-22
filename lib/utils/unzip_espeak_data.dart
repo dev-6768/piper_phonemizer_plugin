@@ -8,7 +8,7 @@ import 'package:archive/archive.dart';
 Future<String> unzipEspeakData() async {
   // Get application documents directory
   final appDocDir = await getApplicationDocumentsDirectory();
-  final targetDir = Directory('${appDocDir.path}/piper_phonemizer_plugin_019aab7f-b010-791b-95d9-04eccfde02ab/019aab87-94bf-7cf3-b66c-275f0dbc5bee/espeak-ng-data');
+  final targetDir = Directory('${appDocDir.path}/piper_phonemizer_plugin_04eccfde02ab/espeak-ng-data');
 
   // If folder already exists, skip extraction
   if (await targetDir.exists()) return targetDir.path;
