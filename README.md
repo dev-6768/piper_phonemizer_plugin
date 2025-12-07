@@ -57,10 +57,10 @@ dependencies:
 
 how to use it ?
 ```dart
-import 'package:piper_phonemizer/piper_phonemizer.dart';
+import 'package:piper_phonemizer_plugin/piper_phonemizer_plugin.dart';
 
 void main() async {
-  final phonemizer = PiperPhonemizer();
+  final phonemizer = PiperPhonemizerPlugin();
 
   await phonemizer.initialize();
 
