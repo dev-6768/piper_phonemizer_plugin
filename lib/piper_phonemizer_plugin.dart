@@ -1,5 +1,5 @@
 
-import 'dart:developer';
+//import 'dart:developer';
 
 import 'piper_phonemizer_plugin_platform_interface.dart';
 import 'dart:ffi';
@@ -50,7 +50,7 @@ class PiperPhonemizerPlugin {
   Future<int> initialize() async {
     try {
       final dataDir = await unzipEspeakData();
-      print(dataDir);
+      //print(dataDir);
       final dirPtr = dataDir.toNativeUtf8();
       final result = _initialize(dirPtr);
       malloc.free(dirPtr);

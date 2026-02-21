@@ -15,7 +15,7 @@ void tester() async {
   await piperPhonemizer.initialize();
   piperPhonemizer.setVoice("en");
   final result = piperPhonemizer.getPhonemesString("hello world");
-  print("Phonemes : $result");
+  //print("Phonemes : $result");
 }
 
 class MyApp extends StatefulWidget {
