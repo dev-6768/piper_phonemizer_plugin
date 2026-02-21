@@ -1,7 +1,13 @@
 name: piper_phonemizer_windows_plugin
 description: "A new Flutter plugin project."
 version: 0.0.1
-homepage:
+
+homepage: https://github.com/dev-6768/piper_phonemizer_windows_plugin
+repository: https://github.com/dev-6768/piper_phonemizer_windows_plugin
+issue_tracker: https://github.com/dev-6768/piper_phonemizer_windows_plugin/issues
+
+
+#homepage:
 
 environment:
   sdk: ^3.7.2
