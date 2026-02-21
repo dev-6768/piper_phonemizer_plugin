@@ -1,7 +1,11 @@
 name: piper_phonemizer_plugin
-description: "A new Flutter plugin project."
+description: "A new phonemizer for piper voice models compatible with Android platform."
 version: 0.0.1
-homepage:
+
+homepage: https://github.com/dev-6768/piper_phonemizer_plugin
+repository: https://github.com/dev-6768/piper_phonemizer_plugin
+issue_tracker: https://github.com/dev-6768/piper_phonemizer_plugin/issues
+
 
 environment:
   sdk: ^3.7.2
