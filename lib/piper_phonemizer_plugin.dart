@@ -1,6 +1,4 @@
 
-import 'dart:developer';
-
 import 'piper_phonemizer_plugin_platform_interface.dart';
 import 'dart:ffi';
 import 'dart:io';
@@ -25,7 +23,7 @@ class PiperPhonemizerPlugin {
   DynamicLibrary _openLibrary() {
     if (Platform.isAndroid) {
       return DynamicLibrary.open("espeakbridge.so");
-    }
+    }    
     throw UnsupportedError("ESpeakBridge is only supported on Android.");
   }
 

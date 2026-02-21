@@ -116,9 +116,13 @@ class _PhonemeWidgetState extends State<PhonemeWidget> {
       final phonemes = piperPhonemizer.getPhonemesString(inputText);
 
       setState(() => _phonemeOutput = phonemes); // join if a list
-    } catch (e) {
+    } 
+    
+    catch (e) {
       setState(() => _phonemeOutput = 'Error: $e');
-    } finally {
+    } 
+    
+    finally {
       setState(() => _loading = false);
     }
   }
